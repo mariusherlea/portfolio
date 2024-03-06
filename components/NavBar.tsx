@@ -4,15 +4,15 @@ import ThemeSwitch from './ThemeSwitch';
 
 const links = {
   home: {
-    href: '#',
+    href: '/',
     title: 'Home',
   },
   about: {
-    href: '#',
+    href: '/about',
     title: 'About',
   },
   contact: {
-    href: '#',
+    href: '/contact',
     title: 'Contact',
   },
 };
