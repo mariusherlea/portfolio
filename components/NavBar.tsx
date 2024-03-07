@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import ThemeSwitch from './ThemeSwitch';
+import Logo from './Logo';
 
 const links = {
   home: {
@@ -30,7 +31,7 @@ const NavBar = () => {
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <a href="#" className="text-white">
-                  Logo
+                  <Logo />
                 </a>
               </div>
             </div>
