@@ -10,8 +10,12 @@ const Logo = () => {
     <div>
       <Link href={'/'} legacyBehavior>
         <div className="flex">
-          <span className="text-xl  border-2 p-1">MH</span>
-          <span className="text-xl bg-white text-black border-2 p-1">.dev</span>
+          <div className={special.className}>
+            <span className="text-xl border-2 p-1">MH</span>
+            <span className="text-xl bg-white text-black border-2 p-1">
+              .dev
+            </span>
+          </div>
         </div>
       </Link>
     </div>
