@@ -8,16 +8,16 @@ export default function Home() {
         <Image
           src={eu}
           alt="Picture oh the author"
-          width={300}
-          height={300}
-          className=""
+          style={{ objectFit: 'contain' }}
         />
       </div>
       <div className="p-8">
         <h1 className="text-xl">Povesti</h1>
         <p>
-          Trebuie sa spui tot felul despre tine. Ce sa spun ? Sunt un om normal.
-          Un pic ambitios.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa non
+          voluptate eaque quisquam, fugiat, officia ex voluptates praesentium
+          qui reprehenderit consectetur rem, eligendi enim et repudiandae atque
+          assumenda totam vel.
         </p>
       </div>
     </div>
