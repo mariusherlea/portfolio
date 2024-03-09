@@ -61,6 +61,9 @@ const about = () => {
               <div className="rounded p-2 text-sm cursor-pointer hover:bg-sky-200 hover:text-black">
                 React
               </div>
+              <div className="rounded p-2 text-sm cursor-pointer hover:bg-sky-200 hover:text-black">
+                Git
+              </div>
             </div>
           </div>
           {/* experience container*/}
@@ -171,7 +174,6 @@ const about = () => {
             </div>
           </div>
         </div>
-        {/* svg container */}
       </div>
     </>
   );
