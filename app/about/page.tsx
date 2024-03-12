@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'About Mh',
 };
 
-const about = () => {
+const About = () => {
   return (
     <>
       {/* container */}
@@ -185,4 +185,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

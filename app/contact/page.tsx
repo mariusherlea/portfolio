@@ -4,7 +4,7 @@ import React from 'react';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-const page = () => {
+const Page = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
@@ -77,4 +77,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
