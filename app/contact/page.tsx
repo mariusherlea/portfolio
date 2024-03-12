@@ -10,7 +10,7 @@ const Page = () => {
 
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: any) => {
     e.preventDefault();
     setError(false);
     setSuccess(false);
