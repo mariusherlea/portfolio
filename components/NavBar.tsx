@@ -41,7 +41,8 @@ const NavBar = () => {
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
                 {Object.keys(links).map((key) => {
-                  const { href, title } = links[key];
+                  const linkKey = key as keyof typeof links;
+                  const { href, title } = links[linkKey];
                   return (
                     <a key={key} href={href} className="text-white">
                       {title}
@@ -92,7 +93,8 @@ const NavBar = () => {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 flex flex-col">
               {Object.keys(links).map((key) => {
-                const { href, title } = links[key];
+                const linkKey = key as keyof typeof links;
+                const { href, title } = links[linkKey];
                 return (
                   <a key={key} href={href} className="text-white">
                     {title}
