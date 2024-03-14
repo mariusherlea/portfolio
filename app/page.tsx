@@ -1,14 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center md:flex-row">
       <div>
-        <Image
-          src={'../public/static/images/eu.png'}
-          alt="Picture oh the author"
-          style={{ objectFit: 'contain' }}
-        />
+        <img src="/eu.png" alt="Example Image" className="w-200 h-auto" />
       </div>
       <div className="p-8">
         <h1 className="text-xl">Povesti</h1>
