@@ -18,4 +18,6 @@ const config: Config = {
   },
   plugins: [],
 };
+// tailwind.config.js
+
 export default config;

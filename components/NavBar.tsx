@@ -30,13 +30,15 @@ const NavBar = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <a href="#" className="text-white">
+                <a href="#" className="text-white ">
                   <Logo />
                 </a>
               </div>
             </div>
 
-            <ThemeSwitch />
+            <div className="hover:scale-105 transition-transform duration-300 cursor-pointer">
+              <ThemeSwitch />
+            </div>
 
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
@@ -44,7 +46,10 @@ const NavBar = () => {
                   const linkKey = key as keyof typeof links;
                   const { href, title } = links[linkKey];
                   return (
-                    <a key={key} href={href} className="text-white">
+                    <a
+                      key={key}
+                      href={href}
+                      className="text-white hover:text-slate-500">
                       {title}
                     </a>
                   );
@@ -96,7 +101,10 @@ const NavBar = () => {
                 const linkKey = key as keyof typeof links;
                 const { href, title } = links[linkKey];
                 return (
-                  <a key={key} href={href} className="text-white">
+                  <a
+                    key={key}
+                    href={href}
+                    className="text-white hover:text-slate-500">
                     {title}
                   </a>
                 );
