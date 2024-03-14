@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import eu from '../public/static/images/eu.png';
 
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center md:flex-row">
       <div>
         <Image
-          src={eu}
+          src={'../public/static/images/eu.png'}
           alt="Picture oh the author"
           style={{ objectFit: 'contain' }}
         />
