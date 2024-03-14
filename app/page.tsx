@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import eu from '../public/eu.png';
+import eu from '../public/static/images/eu.png';
 
 export default function Home() {
   return (
