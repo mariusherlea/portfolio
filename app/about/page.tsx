@@ -1,9 +1,8 @@
 import { Metadata } from 'next';
-import React from 'react';
 
 export const metadata: Metadata = {
-  title: 'Mh About',
-  description: 'About Mh',
+  title: 'About MH',
+  description: 'About Marius Herlea',
 };
 
 const About = () => {

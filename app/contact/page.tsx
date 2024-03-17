@@ -1,4 +1,9 @@
-'use client';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact MH',
+  description: 'Contact Marius Herlea',
+};
 
 export default function Contact() {
   return (
