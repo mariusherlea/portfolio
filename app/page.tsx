@@ -2,7 +2,11 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center md:flex-row">
       <div>
-        <img src="/eu.png" alt="Example Image" className="w-200 h-auto" />
+        <img
+          src="/eu.png"
+          alt="Marius Herlea Photos"
+          className="w-200 h-auto"
+        />
       </div>
       <div className="p-8">
         <h1 className="text-xl">Povesti</h1>
