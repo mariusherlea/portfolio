@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import ThemeSwitch from './ThemeSwitch';
 import Logo from './Logo';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const links = {
@@ -21,11 +20,12 @@ const links = {
 };
 const NavBar = () => {
   const [isClick, setisClick] = useState(false);
+  const pathname = usePathname();
 
   const toggleNavBar = (): void => {
     setisClick(!isClick);
   };
-  const pathname = usePathname();
+
   return (
     <div>
       <nav>
@@ -49,19 +49,19 @@ const NavBar = () => {
                   const linkKey = key as keyof typeof links;
                   const { href, title } = links[linkKey];
                   return (
-                    <Link
+                    <a
                       key={key}
                       href={href}
-                      className={pathname === href ? 'font-bold' : ''}>
+                      className={pathname === href ? 'text-gray-400' : ''}>
                       {title}
-                    </Link>
+                    </a>
                   );
                 })}
               </div>
             </div>
             <div className="md:hidden flex items-center">
               <button
-                className="inline-flex items-center justify-center p-2 rounded-md  hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
+                className="inline-flex items-center justify-center p-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
                 onClick={toggleNavBar}>
                 {!isClick ? (
                   <svg
@@ -104,12 +104,12 @@ const NavBar = () => {
                 const linkKey = key as keyof typeof links;
                 const { href, title } = links[linkKey];
                 return (
-                  <Link
+                  <a
                     key={key}
                     href={href}
-                    className={pathname === href ? 'font-bold' : ''}>
+                    className={pathname === href ? 'text-gray-400' : ''}>
                     {title}
-                  </Link>
+                  </a>
                 );
               })}
             </div>
