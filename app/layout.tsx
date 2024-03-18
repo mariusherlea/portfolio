@@ -7,7 +7,10 @@ import { Providers } from './providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'MH Website',
+  title: {
+    default: 'Marius Herlea Website',
+    template: '%s | Marius Herlea Website',
+  },
   description: 'Marius Herlea Website - Homepage',
 };
 

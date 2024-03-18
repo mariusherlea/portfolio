@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import ThemeSwitch from './ThemeSwitch';
 import Logo from './Logo';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const links = {
   home: {
@@ -23,6 +25,7 @@ const NavBar = () => {
   const toggleNavBar = (): void => {
     setisClick(!isClick);
   };
+  const pathname = usePathname();
   return (
     <div>
       <nav>
@@ -46,12 +49,12 @@ const NavBar = () => {
                   const linkKey = key as keyof typeof links;
                   const { href, title } = links[linkKey];
                   return (
-                    <a
+                    <Link
                       key={key}
                       href={href}
-                      className=" hover:scale-105 transition-transform duration-300 cursor-pointer">
+                      className={pathname === href ? 'font-bold' : ''}>
                       {title}
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
@@ -101,12 +104,12 @@ const NavBar = () => {
                 const linkKey = key as keyof typeof links;
                 const { href, title } = links[linkKey];
                 return (
-                  <a
+                  <Link
                     key={key}
                     href={href}
-                    className=" hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black">
+                    className={pathname === href ? 'font-bold' : ''}>
                     {title}
-                  </a>
+                  </Link>
                 );
               })}
             </div>
