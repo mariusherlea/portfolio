@@ -15,7 +15,7 @@ const About = () => {
           {/* biography */}
           <div className="flex flex-col gap-12 justify-center">
             {/*Bio title */}
-            <h2 className="font-bold text-2xl">BIOGRAPHY</h2>
+            <h2>BIOGRAPHY</h2>
             {/* Bio description */}
             <p className="text-lg">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit,
@@ -54,7 +54,7 @@ const About = () => {
           {/* skills */}
           <div className="flex flex-col gap-12 justify-center">
             {/*Skill title */}
-            <h2 className="font-bold text-2xl">SKILLS</h2>
+            <h2>SKILLS</h2>
             {/* Skill list */}
             <div className="flex gap-4 flex-wrap">
               <div className="rounded p-2 text-sm cursor-pointer hover:bg-sky-200 hover:text-black">
@@ -74,7 +74,7 @@ const About = () => {
           {/* experience container*/}
           <div className="flex flex-col gap-12 justify-center pb-48">
             {/* experience title */}
-            <h2 className="font-bold text-2xl">EXPERIENCE</h2>
+            <h2>EXPERIENCE</h2>
             {/* experience list */}
             <div>
               {/* EXPERIENCE LIST ITEM */}

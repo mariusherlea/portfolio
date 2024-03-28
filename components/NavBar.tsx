@@ -13,6 +13,10 @@ const links = {
     href: '/about',
     title: 'About',
   },
+  asyn: {
+    href: '/async',
+    title: 'Async',
+  },
   contact: {
     href: '/contact',
     title: 'Contact',
