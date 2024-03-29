@@ -1,13 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-h1 {
-  @apply text-2xl;
-  @apply text-sky-400;
-}
-
-h2 {
-  @apply text-xl;
-  @apply text-red-400;
-}

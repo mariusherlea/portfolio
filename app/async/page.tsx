@@ -1,31 +1,29 @@
 'use client';
+import React, { useState, useEffect } from 'react';
+import fetchData from '@/components/fetchData';
 
-let pizza: any;
-let notify: any;
+const AsyncComponent: React.FC = () => {
+  const [quote, setQuote] = useState({ content: '', author: '' });
 
-function orderPizza(callback: any) {
-  notify = 'Ordering pizza';
-  setTimeout(() => {
-    pizza = 'Pizza calzon';
-    callback();
-  }, 2000);
-}
+  useEffect(() => {
+    const fetchDataAndSetQuote = async () => {
+      try {
+        const quoteData = await fetchData();
+        setQuote(quoteData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-function pizzaReady() {
-  console.log(`Eat the ${pizza}`);
-}
-
-let callFriend = 'Call Bill';
-
-export default function Async() {
-  orderPizza(pizzaReady);
+    fetchDataAndSetQuote();
+  }, []);
 
   return (
-    <div>
-      <h1>Async</h1>
-      <p>(Open inspect and reload)</p>
-      <p>{notify}</p>
-      <p>{callFriend}</p>
+    <div className="flex flex-col justify-center items-center">
+      <blockquote className="text-2xl">{quote.content}</blockquote>
+      <p>- {quote.author}</p>
     </div>
   );
-}
+};
+
+export default AsyncComponent;
