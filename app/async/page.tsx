@@ -20,6 +20,7 @@ const AsyncComponent: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-center items-center">
+      <h1>Quote</h1>
       <blockquote className="text-2xl">{quote.content}</blockquote>
       <p>- {quote.author}</p>
     </div>
