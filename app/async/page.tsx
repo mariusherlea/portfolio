@@ -8,7 +8,7 @@ const AsyncComponent: React.FC = () => {
   useEffect(() => {
     const fetchDataAndSetQuote = async () => {
       try {
-        const quoteData = await fetchData();
+        const quoteData = await fetchData('https://api.quotable.io/random');
         setQuote(quoteData);
       } catch (error) {
         console.error('Error fetching data:', error);

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import fetchData from '@/components/fetchData';
 
 interface ItemType {
   id: number;
@@ -15,9 +16,18 @@ const Page = () => {
   const [resourceType, setResourceType] = useState('posts');
   const [items, setItems] = useState<ItemType[]>([]);
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
-      .then((res) => res.json())
-      .then((json) => setItems(json));
+    const fetchDataAndSetResourceType = async () => {
+      try {
+        const response = await fetchData(
+          `https://jsonplaceholder.typicode.com/${resourceType}`
+        );
+
+        setItems(response);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchDataAndSetResourceType();
   }, [resourceType]);
 
   return (

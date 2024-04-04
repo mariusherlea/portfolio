@@ -1,7 +1,7 @@
 // fetchData.ts
-const fetchData = async () => {
+const fetchData = async (link: string) => {
   try {
-    const response = await fetch('https://api.quotable.io/random');
+    const response = await fetch(link);
     const quote = await response.json();
     return quote;
   } catch (error) {
