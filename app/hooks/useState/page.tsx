@@ -19,7 +19,7 @@ const Page = () => {
 
   const minusCounter = () => {
     setState((prevState) => {
-      if (prevState.counter === 0) return { counter: (prevState.counter = 0) };
+      if (prevState.counter === 0) return { ...prevState };
       return {
         counter: prevState.counter - 1,
         operation: 'minus',
