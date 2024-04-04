@@ -2,9 +2,18 @@
 
 import React, { useState, useEffect } from 'react';
 
+interface ItemType {
+  id: number;
+  title?: string;
+  body?: string;
+  name?: string;
+  username?: string;
+  email?: string;
+}
+
 const Page = () => {
   const [resourceType, setResourceType] = useState('posts');
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<ItemType[]>([]);
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
       .then((res) => res.json())
