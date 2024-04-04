@@ -33,7 +33,7 @@ const Page = () => {
       <div>
         <h1>{resourceType}</h1>
         {items.map((item) => {
-          return <pre key={item.id}>{JSON.stringify(item, null, 2)}</pre>;
+          return <pre>{JSON.stringify(item, null, 2)}</pre>;
         })}
       </div>
     </>
