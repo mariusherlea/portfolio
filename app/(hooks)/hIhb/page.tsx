@@ -18,7 +18,7 @@ const Page = () => {
   useEffect(() => {
     if (yourScore <= 0) return setIsGameOver('I win');
     else if (myScore <= 0) return setIsGameOver('You win');
-  }, [yourScore || myScore]);
+  }, [yourScore, myScore]);
 
   return (
     <>
