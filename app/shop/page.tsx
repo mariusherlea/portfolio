@@ -24,20 +24,25 @@ const Page = () => {
     {
       name: 'A',
       price: 100,
+      description: 'A description',
     },
     {
       name: 'B',
       price: 200,
+      description: 'B description',
     },
   ];
 
   return (
-    <>
+    <div className="flex flex-col justify-center items-center ">
       {items.map((item) => (
-        <div key={item.name}>
-          <p>{item.name}</p>
+        <div key={item.name} className="m-4 p-3 text-3xl">
+          <p className="text-red-600">{item.name}</p>
           <p>{item.price}</p>
-          <button onClick={() => addItemsToShoppingCart(item)}>
+          <p>{item.description}</p>
+          <button
+            onClick={() => addItemsToShoppingCart(item)}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             ADD to cart
           </button>
         </div>
@@ -49,14 +54,17 @@ const Page = () => {
           <li key={index}>
             <p>{cartItem.name}</p>
             <p>{cartItem.price}</p>
-            <button onClick={() => removeItemFromCart(index)}>
+            <p>{cartItem.description}</p>
+            <button
+              onClick={() => removeItemFromCart(index)}
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
               Remove from cart
             </button>
           </li>
         ))}
       </ul>
       <p>Total Cost: {totalCost}</p>
-    </>
+    </div>
   );
 };
 

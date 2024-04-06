@@ -21,6 +21,10 @@ const links = {
     href: '/game',
     title: 'Game',
   },
+  shop: {
+    href: '/shop',
+    title: 'Shop',
+  },
   contact: {
     href: '/contact',
     title: 'Contact',
