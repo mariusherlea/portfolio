@@ -18,8 +18,8 @@ const links = {
     title: 'Async',
   },
   firstGame: {
-    href: '/hIhb',
-    title: 'First Game',
+    href: '/game',
+    title: 'Game',
   },
   contact: {
     href: '/contact',
