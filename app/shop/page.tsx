@@ -2,8 +2,30 @@
 
 import React, { useState } from 'react';
 
+interface ItemProps {
+  item: {
+    name: string;
+    price: number;
+    quantity: number;
+  };
+  onAddToCart: (item: {
+    name: string;
+    price: number;
+    quantity: number;
+  }) => void;
+}
+
+interface ShoppingCartProps {
+  cart: {
+    name: string;
+    price: number;
+    quantity: number;
+  }[];
+  onRemoveFromCart: (index: number) => void;
+}
+
 // Separate component for displaying an individual item
-const Item = ({ item, onAddToCart }) => {
+const Item: React.FC<ItemProps> = ({ item, onAddToCart }) => {
   return (
     <div key={item.name} className="m-4 p-3 text-3xl">
       <p className="text-red-600">{item.name}</p>
@@ -22,7 +44,10 @@ const Item = ({ item, onAddToCart }) => {
 };
 
 // Separate component for displaying the shopping cart
-const ShoppingCart = ({ cart, onRemoveFromCart }) => {
+const ShoppingCart: React.FC<ShoppingCartProps> = ({
+  cart,
+  onRemoveFromCart,
+}) => {
   return (
     <>
       <h2>Shopping Cart:</h2>
