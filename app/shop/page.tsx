@@ -2,6 +2,46 @@
 
 import React, { useState } from 'react';
 
+// Separate component for displaying an individual item
+const Item = ({ item, onAddToCart }) => {
+  return (
+    <div key={item.name} className="m-4 p-3 text-3xl">
+      <p className="text-red-600">{item.name}</p>
+      <p>{item.price}</p>
+      <p>Quantity: {item.quantity}</p>
+      <button
+        onClick={() => onAddToCart(item)}
+        className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${
+          item.quantity === 0 && 'opacity-50 cursor-not-allowed'
+        }`}
+        disabled={item.quantity === 0}>
+        ADD to cart
+      </button>
+    </div>
+  );
+};
+
+// Separate component for displaying the shopping cart
+const ShoppingCart = ({ cart, onRemoveFromCart }) => {
+  return (
+    <>
+      <h2>Shopping Cart:</h2>
+      <ul>
+        {cart.map((cartItem, index) => (
+          <li key={index}>
+            <p>{cartItem.name}</p>
+            <p>Quantity: {cartItem.quantity}</p>
+            <p>Price: {cartItem.price}</p>
+            <button onClick={() => onRemoveFromCart(index)}>
+              Remove from cart
+            </button>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
 const Page = () => {
   const [shoppingCart, setShoppingCart] = useState<any[]>([]);
 
@@ -85,37 +125,15 @@ const Page = () => {
   );
 
   return (
-    <div className="flex flex-col justify-center items-center ">
-      {items.map((item, index) => (
-        <div key={item.name} className="m-4 p-3 text-3xl">
-          <p className="text-red-600">{item.name}</p>
-          <p>{item.price}</p>
-          <p>Quantity: {item.quantity}</p> {/* Display item quantity */}
-          <button
-            onClick={() => addItemsToShoppingCart(item)}
-            className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ${
-              item.quantity === 0 && 'opacity-50 cursor-not-allowed'
-            }`}
-            disabled={item.quantity === 0} // Disable button if item quantity is 0
-          >
-            ADD to cart
-          </button>
-        </div>
+    <div className="flex flex-col justify-center items-center">
+      {items.map((item) => (
+        <Item
+          key={item.name}
+          item={item}
+          onAddToCart={addItemsToShoppingCart}
+        />
       ))}
-
-      <h2>Shopping Cart:</h2>
-      <ul>
-        {shoppingCart.map((cartItem, index) => (
-          <li key={index}>
-            <p>{cartItem.name}</p>
-            <p>Quantity: {cartItem.quantity}</p>
-            <p>Price: {cartItem.price}</p>
-            <button onClick={() => removeItemFromCart(index)}>
-              Remove from cart
-            </button>
-          </li>
-        ))}
-      </ul>
+      <ShoppingCart cart={shoppingCart} onRemoveFromCart={removeItemFromCart} />
       <p>Total Cost: {totalCost}</p>
     </div>
   );
