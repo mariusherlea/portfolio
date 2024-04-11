@@ -159,6 +159,7 @@ const Page = () => {
         />
       ))}
       <ShoppingCart cart={shoppingCart} onRemoveFromCart={removeItemFromCart} />
+
       <p>Total Cost: {totalCost}</p>
     </div>
   );
