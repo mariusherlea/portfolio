@@ -2,7 +2,7 @@
 
 import React, { useState, createContext, useContext } from 'react';
 
-const UserContext = createContext();
+const UserContext = createContext('');
 
 function Component1() {
   const [user, setUser] = useState('Jesse Hall');
