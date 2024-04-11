@@ -1,6 +1,6 @@
 'use client';
 import { MapProvider } from '@/providers/map-provider';
-import { MapComponent } from '@/components/map';
+import { MapComponent } from '@/components/Map';
 
 export default function Home() {
   return (
