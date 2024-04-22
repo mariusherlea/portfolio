@@ -23,7 +23,7 @@ const links = {
   },
   shop: {
     href: '/shoppingCart',
-    title: 'ShoppinCart',
+    title: 'ShoppingCart',
   },
   contact: {
     href: '/contact',
