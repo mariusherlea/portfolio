@@ -57,7 +57,9 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
             <p>{cartItem.name}</p>
             <p>Quantity: {cartItem.quantity}</p>
             <p>Price: {cartItem.price}</p>
-            <button onClick={() => onRemoveFromCart(index)}>
+            <button
+              onClick={() => onRemoveFromCart(index)}
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mt-2 mb-2">
               Remove from cart
             </button>
           </li>
@@ -160,7 +162,7 @@ const Page = () => {
       ))}
       <ShoppingCart cart={shoppingCart} onRemoveFromCart={removeItemFromCart} />
 
-      <p>Total Cost: {totalCost}</p>
+      <p className="mt-8 text-2xl text-green-500">Total Cost: {totalCost}</p>
     </div>
   );
 };
