@@ -3,7 +3,7 @@ we need to make this component client rendered as well*/
 'use client';
 
 //Map component Component from library
-import { GoogleMap, MarkerF } from '@react-google-maps/api';
+import { GoogleMap, MarkerF, InfoWindowF } from '@react-google-maps/api';
 
 //Map's styling
 const defaultMapContainerStyle = {
@@ -13,7 +13,7 @@ const defaultMapContainerStyle = {
   border: '1px solid #000000',
 };
 
-//K2's coordinates
+//my coordinates
 const defaultMapCenter = {
   lat: 45.878672,
   lng: 23.355856,
@@ -37,7 +37,14 @@ const MapComponent = () => {
         mapContainerStyle={defaultMapContainerStyle}
         center={defaultMapCenter}
         zoom={defaultMapZoom}
-        options={defaultMapOptions}></GoogleMap>
+        options={defaultMapOptions}>
+        <MarkerF
+          position={{
+            lat: 45.878672,
+            lng: 23.355956,
+          }}
+        />
+      </GoogleMap>
     </div>
   );
 };
