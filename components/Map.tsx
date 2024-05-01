@@ -3,7 +3,7 @@ we need to make this component client rendered as well*/
 'use client';
 
 //Map component Component from library
-import { GoogleMap, MarkerF, InfoWindowF } from '@react-google-maps/api';
+import { GoogleMap, MarkerF } from '@react-google-maps/api';
 
 //Map's styling
 const defaultMapContainerStyle = {
