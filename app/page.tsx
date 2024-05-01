@@ -1,12 +1,14 @@
-export default function Home() {
+function Home() {
   return (
     <div className="flex flex-col justify-center items-center md:flex-row">
       <div>
-        <img
-          src="/eu.png"
-          alt="Marius Herlea Photos"
-          className="w-200 h-auto"
-        />
+        <picture>
+          <img
+            src="/eu.png"
+            alt="Marius Herlea Photos"
+            className="w-200 h-auto"
+          />
+        </picture>
       </div>
       <div className="p-8">
         <h1 className="text-xl">Povesti</h1>
@@ -20,3 +22,4 @@ export default function Home() {
     </div>
   );
 }
+export default Home;
