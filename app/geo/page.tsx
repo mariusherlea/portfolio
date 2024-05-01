@@ -5,7 +5,7 @@ import { APIProvider, useMapsLibrary } from '@vis.gl/react-google-maps';
 
 export default function Page() {
   return (
-    <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY} as string>
+    <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || ''}>
       <Geocoding />
     </APIProvider>
   );
